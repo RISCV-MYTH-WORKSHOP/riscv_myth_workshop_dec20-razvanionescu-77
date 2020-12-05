@@ -13,6 +13,9 @@
          $reset = *reset;
          $valid_or_reset = $valid || $reset;
          
+         $cnt[0] = $reset ? 0 : (1 + >>1$cnt[0]);
+         $valid[0] = $cnt;
+         
       ?$valid_or_reset
          @1
             //$val1[31:0] = $rand1[3:0];
@@ -24,12 +27,8 @@
             $prod[31:0] = $val1[31:0] * $val2[31:0];
             $quot[31:0] = $val1[31:0] / $val2[31:0];
 
-      @1
-         $cnt[0] = $reset ? 0 : (1 + >>1$cnt[0]);
-         $valid[0] = $cnt;
-
-      @2
-         $out[31:0] = $reset ? 0 : (($op[1:0] == 2'b00) ? $sum[31:0] : (($op[1:0] == 2'b01) ? $diff[31:0] : (($op[1:0] == 2'b10) ? $prod[31:0] : $quot[31:0])));
+         @2
+            $out[31:0] = $reset ? 0 : (($op[1:0] == 2'b00) ? $sum[31:0] : (($op[1:0] == 2'b01) ? $diff[31:0] : (($op[1:0] == 2'b10) ? $prod[31:0] : $quot[31:0])));
          
 
       // Macro instantiations for calculator visualization(disabled by default).
