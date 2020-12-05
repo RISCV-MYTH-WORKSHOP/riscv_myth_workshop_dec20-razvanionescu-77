@@ -9,19 +9,17 @@
 
 \TLV
    |calc
+      @0
+        $reset = *reset; 
       @1
-         $reset = *reset;
          $valid_or_reset = $valid || $reset;
          
-         $cnt[0] = $reset ? 0 : (1 + >>1$cnt[0]);
-         $valid[0] = $cnt;
+         $valid[0] = $reset ? 0 : (1 + >>1$valid[0]);
+         $val1[31:0] = >>2$out[31:0];
+         $val2[31:0] = $rand2[3:0];
          
       ?$valid_or_reset
          @1
-            //$val1[31:0] = $rand1[3:0];
-            $val1[31:0] = >>2$out[31:0];
-            $val2[31:0] = $rand2[3:0];
-
             $sum[31:0] = $val1[31:0] + $val2[31:0];
             $diff[31:0] = $val1[31:0] - $val2[31:0];
             $prod[31:0] = $val1[31:0] * $val2[31:0];
