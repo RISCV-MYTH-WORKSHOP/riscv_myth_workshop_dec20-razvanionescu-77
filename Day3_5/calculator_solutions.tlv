@@ -8,19 +8,21 @@
    m4_makerchip_module   // (Expanded in Nav-TLV pane.)
 
 \TLV
-   |comp
+   |calc
       @0
          $reset = *reset;
          
-      @1
-         $err1 = $bad_input + $illegal_op;
-      
-      @3
-         $err2 = $err1 + $over_flow;
-      
-      @6
-         $err3 = $err2 + $div_by_zero;
-         
+         $val1[31:0] = $rand1[3:0];
+         $val2[31:0] = $rand2[3:0];
+   
+         $sum[31:0] = >>1$out[31:0] + $val2[31:0];
+         $diff[31:0] = >>1$out[31:0] - $val2[31:0];
+         $prod[31:0] = >>1$out[31:0] * $val2[31:0];
+         $quot[31:0] = >>1$out[31:0] / $val2[31:0];
+   
+         $out[31:0] = $reset ? 0 : (($op[1:0] == 2'b00) ? $sum[31:0] : (($op[1:0] == 2'b01) ? $diff[31:0] : (($op[1:0] == 2'b10) ? $prod[31:0] : $quot[31:0])));
+
+         $cnt[31:0] = $reset ? 0 : (1 + >>1$cnt);
 
       // Macro instantiations for calculator visualization(disabled by default).
       // Uncomment to enable visualisation, and also,
@@ -31,7 +33,7 @@
       //  o $rand2[3:0]
       //  o $op[x:0]
       
-   //m4+cal_viz(@3) // Arg: Pipeline stage represented by viz, should be atleast equal to last stage of CALCULATOR logic.
+   m4+cal_viz(@0) // Arg: Pipeline stage represented by viz, should be atleast equal to last stage of CALCULATOR logic.
 
    
    // Assert these to end simulation (before Makerchip cycle limit).
