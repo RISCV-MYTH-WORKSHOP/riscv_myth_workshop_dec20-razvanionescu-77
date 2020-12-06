@@ -181,7 +181,7 @@
                     >>1$valid_load || >>2$valid_load);
          
          $rf_wr_en =  $rd_valid && ($rd != 5'b0) && $valid;
-         $rf_wr_index[4:0] = $rd;
+         $rf_wr_index[4:0] = >>2$valid_load ? >>2$rd : $rd;
          $rf_wr_data[31:0] = >>2$valid_load ? >>2$ld_data : $result;
          
          $valid_taken_br = $valid && $taken_br;
