@@ -156,8 +156,8 @@
                          $is_sub ? $src1_value - $src2_value :
                          $is_sll ? $src1_value << $src2_value[4:0] :
                          $is_srl ? $src1_value >> $src2_value[4:0] :
-                         $is_sltu ? $src1_value < $src2_value :
-                         $is_sltiu ? $src1_value < $imm :
+                         $is_sltu ? $sltu_rslt :
+                         $is_sltiu ? $sltiu_rslt :
                          $is_lui ? {$imm[31:12],12'b0} :
                          $is_auipc ? $pc + $imm :
                          $is_jal ? $pc + 4 :
