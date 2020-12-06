@@ -96,6 +96,7 @@
          ?$funct3_valid
             $funct3[2:0] = $instr[14:12];
          
+      @2
          $dec_bits[10:0] = {$funct7[5],$funct3,$opcode};
          $is_beq = $dec_bits ==? 11'bx_000_1100011;
          $is_bne = $dec_bits ==? 11'bx_001_1100011;
@@ -136,7 +137,6 @@
                     $is_sltiu $is_xori $is_ori $is_andi $is_slli $is_srli $is_srai $is_sub $is_sll
                     $is_slt $is_sltu $is_xor $is_srl $is_sra $is_or $is_and)
          
-      @2
          $rf_rd_en1 = $rs1_valid;
          $rf_rd_en2 = $rs2_valid;
          $rf_rd_index1[4:0] = $rs1;
