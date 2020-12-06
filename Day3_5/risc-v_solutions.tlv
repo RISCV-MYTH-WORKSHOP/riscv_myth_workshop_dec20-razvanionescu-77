@@ -48,6 +48,8 @@
          $pc[31:0] = >>1$reset ? 32'd0 : 
                      >>3$valid_taken_br ? >>3$br_tgt_pc :
                      >>3$valid_load ? >>3$inc_pc :
+                     >>3$valid_jump && >>3$is_jal ? >>3$br_tgt_pc :
+                     >>3$valid_jump && >>3$is_jalr ? >>3$jalr_tgt_pc :
                      >>1$inc_pc;
          
          //$start = (>>1$reset && $reset == 0) ? 1'b1 : 1'b0;
@@ -144,8 +146,10 @@
          $src2_value[31:0] = >>1$rf_wr_en && (>>1$rf_wr_index == $rf_rd_index2) ? >>1$result : $rf_rd_data2;
          
          $br_tgt_pc[31:0] = $pc + $imm;
+         $jalr_tgt_pc[31:0] = $src1_value + $imm;
          
       @3
+         $is_jump = $is_jal || $is_jalr;
          $sltu_rslt[31:0] = $src1_value < $src2_value;
          $sltiu_rslt[31:0] = $src1_value < $imm;
          $result[31:0] = ($is_addi || $is_load || $is_s_instr) ? $src1_value + $imm :
@@ -182,7 +186,8 @@
                      1'b0;
          
          $valid = !(>>1$valid_taken_br || >>2$valid_taken_br ||
-                    >>1$valid_load || >>2$valid_load);
+                    >>1$valid_load || >>2$valid_load ||
+                    >>1$valid_jump || >>2$valid_jump);
          
          $rf_wr_en =  ($rd_valid && ($rd != 5'b0) && $valid) || >>2$valid_load;
          $rf_wr_index[4:0] = >>2$valid_load ? >>2$rd : $rd;
@@ -190,6 +195,7 @@
          
          $valid_taken_br = $valid && $taken_br;
          $valid_load = $valid && $is_load;
+         $valid_jump = $valid && $is_jump;
       
       @4
          $dmem_wr_en = $is_s_instr && $valid;
