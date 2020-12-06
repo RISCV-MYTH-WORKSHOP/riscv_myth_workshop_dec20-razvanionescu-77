@@ -43,11 +43,9 @@
 
          $pc[31:0] = >>1$reset ? 32'd0 : 
                      >>3$valid_taken_br ? >>3$br_tgt_pc :
-                     >>3$inc_pc;
+                     >>1$inc_pc;
          
-         $start = (>>1$reset && $reset == 0) ? 1'b1 : 1'b0;
-         $valid = $reset ? 1'b0 : 
-                  $start ? 1'b1 : >>3$valid;
+         //$start = (>>1$reset && $reset == 0) ? 1'b1 : 1'b0;
       
       @1
          $inc_pc[31:0] = $pc + 32'd4;
@@ -119,10 +117,6 @@
                          $is_add ? $src1_value + $src2_value :
                          32'bx;
          
-         $rf_wr_en =  $rd_valid && ($rd != 5'b0) && $valid;
-         $rf_wr_index[4:0] = $rd;
-         $rf_wr_data[31:0] = $result;
-         
          $taken_br = $is_beq ? ($src1_value == $src2_value) :
                      $is_bne ? ($src1_value != $src2_value) :
                      $is_blt ? (($src1_value < $src2_value)^($src1_value[31] != $src2_value[31])) :
@@ -130,7 +124,13 @@
                      $is_bltu ? ($src1_value < $src2_value) :
                      $is_bgeu ? ($src1_value >= $src2_value) :
                      1'b0;
-                     
+         
+         $valid = !(>>1$valid_taken_br || >>2$valid_taken_br);
+         
+         $rf_wr_en =  $rd_valid && ($rd != 5'b0) && $valid;
+         $rf_wr_index[4:0] = $rd;
+         $rf_wr_data[31:0] = $result;
+         
          $valid_taken_br = $valid && $taken_br;
 
       // Note: Because of the magic we are using for visualisation, if visualisation is enabled below,
