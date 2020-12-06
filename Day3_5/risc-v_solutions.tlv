@@ -187,8 +187,14 @@
          $valid_taken_br = $valid && $taken_br;
          $valid_load = $valid && $is_load;
       
+      @4
+         $dmem_wr_en = $is_s_instr && $valid;
+         $dmem_rd_en = $is_load;
+         $dmem_addr[3:0] = $result[5:2];
+         $dmem_wr_data[31:0] = $src2_value;
+         
       @5
-         $ld_data = 'x;
+         $ld_data[31:0] = $dmem_rd_data;
 
       // Note: Because of the magic we are using for visualisation, if visualisation is enabled below,
       //       be sure to avoid having unassigned signals (which you might be using for random inputs)
@@ -208,9 +214,9 @@
    |cpu
       m4+imem(@1)    // Args: (read stage)
       m4+rf(@2, @3)  // Args: (read stage, write stage) - if equal, no register bypass is required
-      //m4+dmem(@4)    // Args: (read/write stage)
+      m4+dmem(@4)    // Args: (read/write stage)
    
-   //m4+cpu_viz(@5)    // For visualisation, argument should be at least equal to the last stage of CPU logic
+   m4+cpu_viz(@5)    // For visualisation, argument should be at least equal to the last stage of CPU logic
                        // @4 would work for all labs
 \SV
    endmodule
