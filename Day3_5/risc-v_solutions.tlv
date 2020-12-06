@@ -41,7 +41,9 @@
       @0
          $reset = *reset;
 
-         $pc[31:0] = >>1$reset ? 32'd0 : (>>1$pc + 32'd4);
+         $pc[31:0] = >>1$reset ? 32'd0 : 
+                     >>1$taken_br ? >>1$br_tgt_pc :
+                     (>>1$pc + 32'd4);
       
       @1
          $imem_rd_en = ! $reset;
@@ -118,6 +120,8 @@
                      $is_bltu ? ($src1_value < $src2_value) :
                      $is_bgeu ? ($src1_value >= $src2_value) :
                      1'b0;
+         
+         $br_tgt_pc = $pc + $imm;
          
 
       // Note: Because of the magic we are using for visualisation, if visualisation is enabled below,
