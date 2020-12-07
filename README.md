@@ -7,7 +7,7 @@
 [Examples of use](#examples)
 
 
-## Headers
+## Introduction
 > To be completed
 ## Technologies
 > To be completed
