@@ -1,6 +1,6 @@
 # A RISC-V core micro-architecture to implement RV32I Base Instruction Set
 
-[![](https://img.shields.io/badge/-RISC--V-red "RISC-V")](https://riscv.org/) [![](https://img.shields.io/badge/-TL--Verilog-blue "TL-Verilog")](https://tl-x.org/)
+[![](https://img.shields.io/badge/-RISC--V-red "RISC-V")](https://riscv.org/) [![](https://img.shields.io/badge/-TL--Verilog-blue "TL-Verilog")](https://tl-x.org/) [![](https://img.shields.io/badge/-Makerchip-yellowgreen)](http://makerchip.com/)
 ### Table of Contents  
 [Introduction](#headers)  
 [Technologies](#technologies)  
