@@ -1,5 +1,15 @@
-# RISC-V_MYTH_Workshop
+# A RISC-V core micro-architecture to implement RV32I Base Instruction Set
 
-For students of "Microprocessor for You in Thirty Hours" Workshop, offered by for VLSI System Design (VSD) and Redwood EDA, find here accompanying live info and links.
+[![](https://img.shields.io/badge/-RISC--V-red "RISC-V")](https://riscv.org/) [![](https://img.shields.io/badge/-TL--Verilog-blue "TL-Verilog")](https://tl-x.org/)
+### Table of Contents  
+[Introduction](#headers)  
+[Technologies](#technologies)  
+[Examples of use](#examples)
 
-Check the folders for assignments for particular days.
+
+## Headers
+> To be completed
+## Technologies
+> To be completed
+## Examples of use
+> To be completed
