@@ -31,4 +31,5 @@ GitHub is used for source code versioning. Each participant has is own repositor
 #### Slack
 During the workshop, you can always get help from teachers/instructors online via [Slack](risc-vmythworkshop.slack.com) channels or during 1h daily call. Very nice and good interaction between participants and instructors. You can also can see the progress of other folks and ask for guidance or opinion of your design. 
 ## Examples of use
-> To be completed
+There were added folders for each assignments. Each folder contains the tlv code with implementation for microarchitecture and a readme file.
+The folders Day2 and Day3_5 contains the original code developed during the workshop, with many versions corresponding to each assignments.
