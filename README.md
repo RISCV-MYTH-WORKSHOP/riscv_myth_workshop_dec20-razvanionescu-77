@@ -20,6 +20,12 @@ Another amazing cloud based software used during the workshop (during days 3-5) 
 ![alt text](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_dec20-razvanionescu-77/blob/master/images/NAV_TLV_Makerchip.PNG "Explorer")
 ##### `Log`
 ![alt text](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_dec20-razvanionescu-77/blob/master/images/Log_Makerchip.PNG "Log")
+##### `Diagram`
+![alt text](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_dec20-razvanionescu-77/blob/master/images/Diagram_Makerchip.PNG "Diagram")
+##### `Waveform`
+![alt text](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_dec20-razvanionescu-77/blob/master/images/Waveform_Makerchip.PNG "Waveform")
+##### `Viz`
+![alt text](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_dec20-razvanionescu-77/blob/master/images/Viz_Simulation_Makerchip.PNG "Visualization")
 #### GitHub
 GitHub is used for source code versioning. Each participant has is own repository where commits work for each assignment. There is public [repo](https://github.com/stevehoover/RISC-V_MYTH_Workshop) used during the workshop as reference design, also containing steps how to start development.
 #### Slack
