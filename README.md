@@ -16,6 +16,10 @@ The workshop uses a very nice and practical platform called [VSD-IAT(Intelligent
 Another amazing cloud based software used during the workshop (during days 3-5) is [Makerchip](http://makerchip.com/). An easy to use platform, with a lot of online resources (e.g., tutorials, examples) for learning digital design. The participants learn TL-Verilog and has a great combo of views to help them develop and debug their own design/code. There is an editor view for coding in TL-Verilog, another view to explore the generated code in SV(System Verilog) and expanded macros. There is also a Log view, where you can track if your code is compiling, if it passes simulation (based on Verilator), what are the errors , etc. To see your design at work, there are 3 more views: Diagram is showing your design (it is interactive, you can actually hoover the mouse pointer and see expressions), Waveform is showing all the signals (and can perform low level debugging) and Viz - visualization (you can actually try your code in a real life application, e.g., calculator or simulating execution of a program, see your registers, memory, program execution, etc). Check below few screenshots from Makerchip:
 ##### `Decoder`
 ![alt text](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_dec20-razvanionescu-77/blob/master/images/Decoder_Code_Makerchip.PNG "Decoder")
+##### `NAV-TL` in Explorer view
+![alt text](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_dec20-razvanionescu-77/blob/master/images/NAV_TLV_Makerchip.PNG "Explorer")
+##### `Log`
+![alt text](https://github.com/RISCV-MYTH-WORKSHOP/riscv_myth_workshop_dec20-razvanionescu-77/blob/master/images/Log_Makerchip.PNG "Log")
 #### GitHub
 GitHub is used for source code versioning. Each participant has is own repository where commits work for each assignment. There is public [repo](https://github.com/stevehoover/RISC-V_MYTH_Workshop) used during the workshop as reference design, also containing steps how to start development.
 #### Slack
