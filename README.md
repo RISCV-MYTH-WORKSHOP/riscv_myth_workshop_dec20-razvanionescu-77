@@ -17,7 +17,7 @@ Another amazing cloud based software used during the workshop (during days 3-5) 
 > Screenshots to be added
 #### GitHub
 GitHub is used for source code versioning. Each participant has is own repository where commits work for each assignment. There is public [repo](https://github.com/stevehoover/RISC-V_MYTH_Workshop) used during the workshop as reference design, also containing steps how to start development.
-
+#### Slack
 During the workshop, you can always get help from teachers/instructors online via [Slack](risc-vmythworkshop.slack.com) channels or during 1h daily call. Very nice and good interaction between participants and instructors. You can also can see the progress of other folks and ask for guidance or opinion of your design. 
 ## Examples of use
 > To be completed
