@@ -2,9 +2,10 @@
 
 [![](https://img.shields.io/badge/-RISC--V-red "RISC-V")](https://riscv.org/) [![](https://img.shields.io/badge/-TL--Verilog-blue "TL-Verilog")](https://tl-x.org/)
 ### Table of Contents  
-[Introduction](#headers)  
+[Introduction](#introduction)  
 [Technologies](#technologies)  
 [Examples of use](#examples)
+[Acknowledgements](#acknowledgements)
 
 
 ## Introduction
@@ -34,3 +35,8 @@ During the workshop, you can always get help from teachers/instructors online vi
 There were added folders for each assignments, covering days 3, 4 and 5 of the workshop. Each folder contains the tlv code with implementation for microarchitecture and a readme file. To try it, go to [Makerchip](http://makerchip.com/) website and copy-paste the code from example in online editor. From contextual menu (upper-right in editor view) choose Compile and Simulate (`Ctrl-Enter`). You will see in right side of the screen the Diagram generated and you can inspect Waveform and where applicable Viz views for more details.
 
 The folders Day2 and Day3_5 contains the original code developed during the workshop, with many versions corresponding to each assignments.
+## Acknowledgements
+- [Kunal Ghosh](https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836/) (Founder VSD)
+- [Steve Hoover](https://www.linkedin.com/in/steve-hoover-a44b607/) (Founder Redwood EDA)
+- [Shivam Potdar](https://www.linkedin.com/in/shivampotdar99/)
+- [Vineeth Jain](https://www.linkedin.com/in/vineet-jain-3b4a24150/)
