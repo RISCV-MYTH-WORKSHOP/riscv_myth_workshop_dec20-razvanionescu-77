@@ -4,7 +4,7 @@
 ### Table of Contents  
 [Introduction](#introduction)  
 [Technologies](#technologies)  
-[Examples of use](#examples) 
+[Examples of use](#examples)  
 [Acknowledgements](#acknowledgements)
 
 
